@@ -5,37 +5,41 @@ import Vegan from "../assets/vegan.jpg";
 import Pineapple from "../assets/pineapple.jpg";
 import Expensive from "../assets/expensive.jpg";
 
-<p><center>😋CRUST ME,IT'S DELICIOUS🍕</center></p>
-
 export const MenuList = [
   {
     name: "Pepperoni Pizza",
     image: Pepperoni,
     price: 15.99,
+    caption:"Slice, Slice, baby!😋"
   },
   {
     name: "Margherita Pizza",
     image: Margherita,
     price: 11.99,
+    caption:"It’s pizza O’clock😎"
   },
   {
-    name: "PedroTech Special Pizza",
+    name: "Cheese Pizza",
     image: PedroTechSpecial,
     price: 256.53,
+    caption:"A little slice of heaven!😉"
   },
   {
     name: "Vegan Pizza",
     image: Vegan,
     price: 17.99,
+    caption:"Positive vibes only🍕"
   },
   {
     name: "Pineapple Pizza",
     image: Pineapple,
     price: 4.99,
+    caption:"Happiness is a mindset, and I choose to embrace it😜"
   },
   {
-    name: "Very Expensive Pizza",
+    name: "Hawaiian Pizza",
     image: Expensive,
     price: 1997.99,
+    caption:"That’s amore😘"
   },
 ];
