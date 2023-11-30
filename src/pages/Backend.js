@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
-import pages from '../pages/LoginSignup.css'
+import "./App.css"
 import axios from 'axios';
 
-function LoginSignup() {
+function App() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [phoneno, setPhoneno] = useState("");
   const [userNames, setUserNames] = useState([]);
 
   const handlePost = () => {
-    axios.post('http://localhost:5000/register', { name, email, phoneno })
+    axios.post('http://localhost:5000/register', { name, email })
       .then((response) => {
         const result = response.data;
         if (result) {
           alert("Data saved successfully");
           setEmail("");
           setName("");
-          setPhoneno("")
         }
       })
       .catch((error) => {
@@ -39,41 +37,32 @@ function LoginSignup() {
 
   return (
     <div className="container">
-      <h1>WELCOME TO OUR WEBSITE</h1>
+      <h1>This is React WebApp</h1>
       <form>
-      <label>Enter Name:&nbsp;&nbsp;</label>
+      <label>Enter Email:&nbsp;&nbsp;</label>
         <input
           type="text"
           className="input-field" 
-          placeholder="ur name"
+          placeholder="ur email"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <br></br>
-        <label>Enter Email:&nbsp;&nbsp;</label>
+        <label>Enter password:&nbsp;&nbsp;</label>
         <input
           type="email"
           className="input-field"
-          placeholder="Enter ur emailId"
+          placeholder="Enter ur password"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <br></br>
-        <lable>Enter Phoneno</lable>
-        <input 
-        type ="number"
-          className="input-field"
-          placeholder="Enter ur phoneno"
-          value={phoneno}
-          onChange={(e) => setPhoneno(e.target.value)}
-          />
-         <br></br>
         <button type="button" onClick={handlePost}>Post</button>
         <button type="button" onClick={handleGet}>Get</button>
       </form>
-      <p>{userNames.join(", ")}</p>
+      <p>Names: {userNames.join(", ")}</p>
     </div>
   );
 }
 
-export default LoginSignup;
+export default App;
